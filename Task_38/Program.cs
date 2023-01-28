@@ -1,13 +1,14 @@
 ﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементом массива.
 
-// Генерация массива с указанными размерностью и диапазоном случайных значений
+// Генерация массива с указанными размерностью и диапазоном случайных значений (float)
 float[] GeneratingArray(uint size, int minValue, int maxValue)
 {
     float[] array = new float[size];
     Random rnd = new Random();
+    Random dotrnd = new Random();
     for (int i=0; i<size; i++)
     {
-        array[i] = rnd.Next(minValue, maxValue+1);
+        array[i] = rnd.Next(minValue, maxValue) + (float)(dotrnd.Next(0, 10))/10;
     }
     return array;
 }
@@ -43,9 +44,9 @@ void OutputingArray(float[] array)
     Console.Write("[");
     for (int i=0; i<array.Length; i++)
         if (i<array.Length-1) 
-            Console.Write($"{array[i]}, ");
+            Console.Write(array[i].ToString("#.0") + " ");
         else
-            Console.Write($"{array[i]}]");
+            Console.Write(array[i].ToString("#.0") + "]");
             Console.WriteLine("");
 }
 
