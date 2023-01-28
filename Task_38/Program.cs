@@ -36,7 +36,7 @@ int GetIndexOfMin(float[] array)
     return IndexOfMin;    
 }
 
-// Вывод массива result.ToString("0.##")
+// Вывод массива
 void OutputingArray(float[] array)
 {
     Console.WriteLine("Сформированный массив:");
