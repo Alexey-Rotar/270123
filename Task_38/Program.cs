@@ -5,10 +5,9 @@ float[] GeneratingArray(uint size, int minValue, int maxValue)
 {
     float[] array = new float[size];
     Random rnd = new Random();
-    Random dotrnd = new Random();
     for (int i=0; i<size; i++)
     {
-        array[i] = rnd.Next(minValue, maxValue) + (float)(dotrnd.Next(0, 10))/10;
+        array[i] = rnd.Next(minValue, maxValue) + (float)(rnd.Next(0, 10))/10;
     }
     return array;
 }
@@ -75,4 +74,4 @@ while (!int.TryParse(Console.ReadLine(), out maxValue) || maxValue<minValue)
 // Вызовы методов
 float[] createdArray = GeneratingArray(size, minValue, maxValue);
 OutputingArray(createdArray);
-Console.WriteLine($"Разница между максимальным и минимальным элементом: {createdArray[GetIndexOfMax(createdArray)]-createdArray[GetIndexOfMin(createdArray)]}");
+Console.WriteLine($"Разница между максимальным и минимальным значениями: {createdArray[GetIndexOfMax(createdArray)]-createdArray[GetIndexOfMin(createdArray)]}");
